@@ -167,9 +167,14 @@
         }
 
         function cancel() {
-            window.close();
+        if (window.close) {
+        window.close();
+        } else {
+        alert("Please close this tab manually.");
+            }
+            
         }
-
+        
         function loadVideo() {
             const input = document.getElementById('videoLink').value;
             const videoId = input.split('v=')[1]?.split('&')[0] || "";
